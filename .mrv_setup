@@ -8,7 +8,7 @@ printf "if [ -f ~/.bash_aliases ]; then\n\t. ~/.bash_aliases\nfi\n" >> ~/.bashrc
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sS https://starship.rs/install.sh | sh
-curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+(curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash) || cargo install binstall
 
 cargo binstall -y ripgrep
 cargo binstall -y lsd
@@ -17,6 +17,7 @@ cargo binstall -y fd
 cargo binstall -y locate
 cargo binstall -y tidy-viewer 
 cargo binstall -y cargo-release
+cargo binstall -y bat
 cargo install hck
 
 
