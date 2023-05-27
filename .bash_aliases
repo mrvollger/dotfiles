@@ -10,6 +10,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+alias ..="cd .."
+
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
@@ -21,8 +23,12 @@ alias exe="tmux detach-client -s exe; tmux attach -t exe"
 alias myR="tmux detach-client -s R; tmux attach -t R"
 alias script="tmux detach-client -s script; tmux attach -t script"
 alias rand="tmux detach-client -s rand; tmux attach -t rand"
-alias ..="cd .."
 
+alias vim='nvim'
+alias parallel="parallel --will-cite"
+alias cdr='cd $(readlink -f .)'
+alias mailme='history 1 | mail -s "command done" $USER@uw.edu'
+alias dup="ls -d */ | parallel -n 1 -j 20 --will-cite du -sh"
 
-
-
+alias tv='tidy-viewer'
+alias ttv=$'tidy-viewer -s "\t"'
