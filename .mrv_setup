@@ -18,6 +18,9 @@ cargo binstall -y locate
 cargo binstall -y tidy-viewer 
 cargo binstall -y cargo-release
 cargo binstall -y bat
+cargo binstall -y git-delta
+cargo binstall -y bottom
+cargo binstall -y hyperfine
 cargo install hck
 
 # https://alacritty.org/
