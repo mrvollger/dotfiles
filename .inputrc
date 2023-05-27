@@ -3,5 +3,9 @@
 # Press down-arrow for next matching command
 "\e[B":history-search-forwardS
 # my preference 
-bind TAB:menu-complete
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set menu-complete-display-prefix on
+"\t": menu-complete
+"\e[Z": menu-complete-backward
 
