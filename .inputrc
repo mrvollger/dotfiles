@@ -5,7 +5,7 @@
 # my preference 
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
-set menu-complete-display-prefix on
+set menu-complete-display-prefix off
 "\t": menu-complete
 "\e[Z": menu-complete-backward
 
