@@ -35,7 +35,7 @@ fi
 
 
 if hash bat 2>/dev/null; then
-  alias cat=bat --paging=never
+  alias cat=bat -pp 
 fi
 
 if hash nvim 2>/dev/null; then
