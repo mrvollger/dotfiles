@@ -1,7 +1,7 @@
 git config --global init.defaultBranch main
 git init .
 git remote add origin git@github.com:mrvollger/unix-config.git
-git pull origin master
+git pull origin main
 
 
 printf "if [ -f ~/.bash_aliases ]; then\n\t. ~/.bash_aliases\nfi\n" >> ~/.bashrc
