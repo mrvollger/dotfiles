@@ -38,12 +38,15 @@ if hash bat 2>/dev/null; then
   alias cat=bat --paging=never
 fi
 
+if hash nvim 2>/dev/null; then
+  alias vim='nvim'
+fi
+
 alias exe="tmux detach-client -s exe; tmux attach -t exe"
 alias myR="tmux detach-client -s R; tmux attach -t R"
 alias script="tmux detach-client -s script; tmux attach -t script"
 alias rand="tmux detach-client -s rand; tmux attach -t rand"
 
-alias vim='nvim'
 alias parallel="parallel --will-cite"
 alias cdr='cd $(readlink -f .)'
 alias mailme='history 1 | mail -s "command done" $USER@uw.edu'
