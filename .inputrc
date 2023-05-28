@@ -5,7 +5,8 @@
 # my preference 
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
-set menu-complete-display-prefix off
+# change this one if you want the first one to select right away
+set menu-complete-display-prefix on
 "\t": menu-complete
 "\e[Z": menu-complete-backward
 
