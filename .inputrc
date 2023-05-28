@@ -3,10 +3,10 @@
 # Press down-arrow for next matching command
 "\e[B":history-search-forwardS
 # my preference 
-set show-all-if-ambiguous on
+set show-all-if-ambiguous off
 set show-all-if-unmodified on
 # change this one if you want the first one to select right away
-set menu-complete-display-prefix on
+set menu-complete-display-prefix off
 "\t": menu-complete
 "\e[Z": menu-complete-backward
 
