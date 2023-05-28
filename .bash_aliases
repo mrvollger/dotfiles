@@ -1,5 +1,5 @@
 # make sure all stay in sync 
-git pull
+git pull &
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
