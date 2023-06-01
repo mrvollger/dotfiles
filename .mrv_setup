@@ -31,3 +31,11 @@ cargo install hck
 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
 bash Mambaforge-$(uname)-$(uname -m).sh
 
+
+mkdir -p .vim
+mkdir -p .vim/syntax
+mkdir -p .vim/ftdetect
+wget -P .vim/ftdetect https://raw.githubusercontent.com/snakemake/snakemake/main/misc/vim/ftdetect/snakemake.vim
+wget -P .vim/syntax https://raw.githubusercontent.com/snakemake/snakemake/main/misc/vim/syntax/snakemake.vim
+
+
