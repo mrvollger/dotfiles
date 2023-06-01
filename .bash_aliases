@@ -41,7 +41,9 @@ if hash bat 2>/dev/null; then
   alias cat='bat -pp'
 fi
 
-if hash nvim 2>/dev/null; then
+if hash lvim 2>/dev/null; then
+  alias vim='lvim'
+elif hash nvim 2>/dev/null; then
   alias vim='nvim'
 fi
 
