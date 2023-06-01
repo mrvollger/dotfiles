@@ -47,6 +47,12 @@ elif hash nvim 2>/dev/null; then
   alias vim='nvim'
 fi
 
+if hash bgzip 2>/dev/null; then
+  alias zcat='bgzip -cd -@ 8'
+  alias gzip='bgzip -@ 8'
+fi
+
+
 alias exe="tmux detach-client -s exe; tmux attach -t exe"
 alias myR="tmux detach-client -s R; tmux attach -t R"
 alias script="tmux detach-client -s script; tmux attach -t script"
