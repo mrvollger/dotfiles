@@ -1,4 +1,8 @@
 #!/bin/bash
+set -euo pipefail
+
+git pull 
+
 mkdir -p ~/.config/alacrity ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lvim/syntax
 
 # printf "if [ -f ~/.bash_aliases ]; then\n\t. ~/.bash_aliases\nfi\n" >> ~/.bashrc
