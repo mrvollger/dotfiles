@@ -10,3 +10,6 @@ set menu-complete-display-prefix off
 "\t": menu-complete
 "\e[Z": menu-complete-backward
 
+# add / to symlink dir 
+$include /etc/inputrc
+set mark-symlinked-directories on

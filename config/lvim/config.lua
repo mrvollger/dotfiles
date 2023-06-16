@@ -12,3 +12,24 @@ lvim.plugins = {
   {"sjl/badwolf"},
 }
 
+table.insert(lvim.plugins, {
+  "zbirenbaum/copilot-cmp",
+  event = "InsertEnter",
+  dependencies = { "zbirenbaum/copilot.lua" },
+  config = function()
+    vim.defer_fn(function()
+      require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+      require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+    end, 100)
+  end,
+})
+
+
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { exe = "black", filetypes = { "python" } }
+}
+lvim.format_on_save.enabled = true
+lvim.format_on_save.pattern = { "*.py" }
+
