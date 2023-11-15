@@ -11,7 +11,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias ..="cd .."
-
+alias scancel_batch='scancel $(squeue -u $(whoami) | grep -P -v "interactive|JOBID|n3333"  | awk "{print \$1}")'
 
 if hash exa 2>/dev/null; then
     alias ls='exa'
@@ -62,3 +62,6 @@ alias dup="ls -d */ | parallel -n 1 -j 20 --will-cite du -sh"
 
 alias tv='tidy-viewer'
 alias ttv=$'tidy-viewer -s "\t"'
+
+
+

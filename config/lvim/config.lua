@@ -6,6 +6,7 @@ lvim.colorscheme = "NeoSolarized"
 
 lvim.plugins = {
   {"lunarvim/colorschemes"},
+  {"jalvesaq/Nvim-R"},
   {"folke/tokyonight.nvim"},
   {"bluz71/vim-moonfly-colors"},
   {"Tsuzat/NeoSolarized.nvim"},
@@ -32,4 +33,20 @@ formatters.setup {
 }
 lvim.format_on_save.enabled = true
 lvim.format_on_save.pattern = { "*.py" }
+
+
+
+-- if you don't want all the parsers change this to a table of the ones you want
+lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "c",
+  "javascript",
+  "json",
+  "lua",
+  "python",
+  "rust",
+  "java",
+  "yaml",
+  "r",
+}
 
