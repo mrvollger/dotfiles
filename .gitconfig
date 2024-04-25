@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[credential]
+	helper = store
+[user]
+  name = Mitchell R. Vollger
+  email = mvollger@gmai.com
+  # pub id 
+	signingkey = $HOME/.ssh/id_ed25519.pub
+[pull]
+  rebase = false
+[init]
+  defaultBranch = main
+[gpg]
+	format = ssh

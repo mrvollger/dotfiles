@@ -7,7 +7,7 @@ mkdir -p ~/.config/alacritty ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lv
 
 # printf "if [ -f ~/.bash_aliases ]; then\n\t. ~/.bash_aliases\nfi\n" >> ~/.bashrc
 
-for f in .Rprofile .bash_aliases .condarc .inputrc .tmux.conf .vimrc start.sh
+for f in .Rprofile .bash_aliases .condarc .inputrc .tmux.conf .vimrc start.sh .gitconfig
 do
 	SRC=`realpath ${f}`
 	DEST="${HOME}/."
