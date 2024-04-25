@@ -12,7 +12,7 @@ do
 	SRC=`realpath ${f}`
 	DEST="${HOME}/."
 	echo $SRC $DEST
-	ln -s $@ $SRC $DEST
+	ln -fs $@ $SRC $DEST
 done
 
 
