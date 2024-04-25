@@ -17,14 +17,14 @@ done
 
 
 for f in \
-	config/alacritty/alacritty.yml \
-	config/lvim/config.lua \
-	config/lvim/ftdetect/snakemake.vim \
-	config/lvim/syntax/snakemake.vim \
-	config/starship.toml 
+	.config/alacritty/alacritty.yml \
+	.config/lvim/config.lua \
+	.config/lvim/ftdetect/snakemake.vim \
+	.config/lvim/syntax/snakemake.vim \
+	.config/starship.toml 
 do
 	SRC=`realpath ${f}`
-	DEST="${HOME}/.${f}"
+	DEST="${HOME}/${f}"
 	echo $SRC $DEST
-	ln -s $@ $SRC $DEST
+	ln -fs $@ $SRC $DEST
 done

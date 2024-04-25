@@ -1,3 +1,6 @@
+https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/
+
+
 git config --global init.defaultBranch main
 git init .
 git remote add origin git@github.com:mrvollger/unix-config.git
