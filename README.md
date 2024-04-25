@@ -1,14 +1,21 @@
+# gnu stow
 https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/
+still need to learn
 
 
+# git config 
 git config --global init.defaultBranch main
 git init .
 git remote add origin git@github.com:mrvollger/unix-config.git
 git pull origin main
 
 
+# add aliases 
+
 printf "if [ -f ~/.bash_aliases ]; then\n\t. ~/.bash_aliases\nfi\n" >> ~/.bashrc
 
+
+# install rust 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sS https://starship.rs/install.sh | sh
 (curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash) || cargo install cargo-binstall
@@ -29,6 +36,7 @@ cargo binstall -y hyperfine
 cargo binstall -y zoxide 
 cargo binstall -y eza
 cargo install hck
+
 
 # https://alacritty.org/
 
