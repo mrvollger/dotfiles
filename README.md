@@ -24,7 +24,7 @@ cargo binstall -y git-delta
 cargo binstall -y bottom
 cargo binstall -y hyperfine
 cargo binstall -y zoxide 
-cargo binstall -y exa
+cargo binstall -y eza
 cargo install hck
 
 # https://alacritty.org/
