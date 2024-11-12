@@ -64,4 +64,4 @@ alias tv='tidy-viewer'
 alias ttv=$'tidy-viewer -s "\t"'
 
 
-export PATH=$PATH:/mmfs1/home/mvollger/bin
+export PATH=${PATH}:${HOME}/bin
