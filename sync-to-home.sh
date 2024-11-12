@@ -33,13 +33,16 @@ for f in .Rprofile \
     SRC=$(realpath ${f})
     DEST="${HOME}/${f}"
 
-    # check if SRC and DEST are the same
-    if [ "$SRC" == "$DEST" ]; then
-        echo "$f" is already synced in the home directory
+    # check if SRC and DEST are the same, and check through symlinks
+    if [ "$(realpath "$SRC")" == "$(realpath "$DEST")" ]; then
+        # echo using a bright green bold color
+        echo -e "\033[1;32m $f is already synced in the home directory \033[0m"
         continue
     elif [ -e "$DEST" ]; then
+        echo
         echo "$f" is already in the home directory, existing file will be backed up
     else
+        echo
         echo "$f" is not in the home directory
     fi
 
