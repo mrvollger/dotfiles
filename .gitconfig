@@ -12,3 +12,5 @@
   defaultBranch = main
 [gpg]
 	format = ssh
+[core]
+	excludesFile = ~/.gitignore
