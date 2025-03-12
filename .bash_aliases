@@ -11,7 +11,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias ..="cd .."
-alias cd="zoxide"
 
 alias scancel_batch='scancel $(squeue -u $(whoami) | grep -P -v "interactive|JOBID|n3333"  | awk "{print \$1}")'
 
