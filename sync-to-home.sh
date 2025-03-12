@@ -40,7 +40,8 @@ for f in .Rprofile \
         continue
     elif [ -e "$DEST" ]; then
         echo
-        echo "$f" is already in the home directory, existing file will be backed up
+        # echo using bright red color
+        echo -e "\033[1;31m $f is already in the home directory, existing file will be backed up \033[0m"
     else
         echo
         echo "$f" is not in the home directory
