@@ -1,21 +1,21 @@
 # This is Git's per-user configuration file.
 [credential]
-	helper = store
+helper = store
 [user]
-  name = Mitchell R. Vollger
-  email = mvollger@gmai.com
-  # pub id 
-	signingkey = $HOME/.ssh/id_ed25519.pub
+name = Mitchell R. Vollger
+email = mvollger@gmai.com
+# pub id
+signingkey = $HOME/.ssh/id_ed25519.pub
 [pull]
-  rebase = false
+rebase = false
 [init]
-  defaultBranch = main
+defaultBranch = main
 [gpg]
-	format = ssh
+format = ssh
 [core]
-	excludesFile = ~/.gitignore
+#excludesFile = ~/.gitignore
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process

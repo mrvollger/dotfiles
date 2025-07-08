@@ -26,6 +26,7 @@ for f in .Rprofile \
     .gitconfig \
     bin/start.sh \
     bin/set-hyak-node.sh \
+    .pixi/manifests/pixi-global.toml \
     .config/alacritty/alacritty.yml \
     .config/lvim/config.lua \
     .config/lvim/ftdetect/snakemake.vim \
