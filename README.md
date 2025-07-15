@@ -12,17 +12,16 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 pixi global install
 
 
+# intall conda/mamba
+this changes all the time, see the latest instructions
 
 
 # maybe things
 
-# lunarvim 
+## lunarvim 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install --lts
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-
-curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
-bash Mambaforge-$(uname)-$(uname -m).sh
 
 
 
