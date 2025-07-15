@@ -15,14 +15,13 @@ alias ..="cd .."
 alias scancel_batch='scancel $(squeue -u $(whoami) | grep -P -v "interactive|JOBID|n3333"  | awk "{print \$1}")'
 
 if hash eza 2>/dev/null; then
-    alias ls='eza'
+    #alias ls='eza' # alias of ls is dangerous in some situations imo
     alias l='eza -l --group-directories-first --git'
     alias ll='eza -l --group-directories-first --git'
     alias lt='eza -T --git-ignore --level=2 --group-directories-first'
     alias llt='eza -lT --git-ignore --level=2 --group-directories-first'
     alias lT='eza -T --git-ignore --level=4 --group-directories-first'
 elif hash lsd 2>/dev/null; then
-    alias ls='lsd'
     alias l='ls -l'
     alias la='ls -a'
     alias lla='ls -la'
