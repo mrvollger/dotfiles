@@ -11,7 +11,7 @@ fi
 set -euo pipefail
 
 git pull
-mkdir -p ~/.config/alacritty ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lvim/syntax ~/.pixi/manifests/
+mkdir -p ~/.config/alacritty ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lvim/syntax ~/.pixi/manifests/ ~/.config/helix
 mkdir -p ~/bin
 
 # printf "if [ -f ~/.bash_aliases ]; then\n\t. ~/.bash_aliases\nfi\n" >> ~/.bashrc
@@ -31,6 +31,7 @@ for f in .Rprofile \
     .config/lvim/config.lua \
     .config/lvim/ftdetect/snakemake.vim \
     .config/lvim/syntax/snakemake.vim \
+    .config/helix/config.toml \
     .config/starship.toml; do
     SRC=$(realpath ${f})
     DEST="${HOME}/${f}"
