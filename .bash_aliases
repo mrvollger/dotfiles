@@ -64,4 +64,10 @@ alias tv='tidy-viewer'
 alias ttv=$'tidy-viewer -s "\t"'
 
 
-export PATH=${PATH}:${HOME}/bin
+alias rawq=$'squeue -o \'%A;%u;%C;%m;%a;%M;%p;%T;%r;%j;%N;%g;%k;%L;%P\' --noconvert'
+alias myq="rawq -u $(whoami) | tv -s ';' -f -u 75"
+alias smkjobs="rawq -u $(whoami) | hck -d ';' -F USER -F CPUS -F MIN_MEMORY -F ACCOUNT  -F STATE -F COMMENT | sed 's/_wildcards_.*//g' | sort -r | datamash groupby -H 1,2,3,4,5,6 count 1 | ttv -u 75"
+
+
+
+
