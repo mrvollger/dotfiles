@@ -5,7 +5,6 @@ curl -fsSL https://pixi.sh/install.sh | sh
 # see the sync script
 Move things to their proper spots with the sync script
 
-# install rust 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # install all my common tools using pixi

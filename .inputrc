@@ -1,7 +1,7 @@
 # Press up-arrow for previous matching command
 "\e[A":history-search-backward
 # Press down-arrow for next matching command
-"\e[B":history-search-forwardS
+"\e[B":history-search-forward
 # my preference 
 set show-all-if-ambiguous off
 set show-all-if-unmodified on

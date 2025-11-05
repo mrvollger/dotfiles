@@ -1,4 +1,5 @@
 channel_priority: strict
+#channel_priority: true
 channels:
   - conda-forge
   - bioconda

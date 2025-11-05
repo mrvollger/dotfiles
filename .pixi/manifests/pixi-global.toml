@@ -1,21 +1,76 @@
 version = 1
 
-[envs.fibertools-rs]
+
+[envs.awscli]
+channels = ["conda-forge"]
+dependencies = { awscli = "*" }
+exposed = { aws = "aws", "aws.cmd" = "aws.cmd", aws_bash_completer = "aws_bash_completer", aws_completer = "aws_completer", aws_zsh_completer = "aws_zsh_completer" }
+
+[envs.htslib]
 channels = ["conda-forge", "bioconda"]
-dependencies = { fibertools-rs = "==0.6.4" }
-exposed = { ft = "ft" }
+dependencies = { htslib = "*" }
+exposed = { annot-tsv = "annot-tsv", bgzip = "bgzip", htsfile = "htsfile", tabix = "tabix" }
+
+[envs.bcftools]
+channels = ["conda-forge", "bioconda"]
+dependencies = { bcftools = "*" }
+exposed = { bcftools = "bcftools", color-chrs = "color-chrs", gff2gff = "gff2gff", guess-ploidy = "guess-ploidy", plot-roh = "plot-roh", plot-vcfstats = "plot-vcfstats", run-roh = "run-roh", vcfutils = "vcfutils" }
+
+[envs.minimap2]
+channels = ["conda-forge", "bioconda"]
+dependencies = { minimap2 = "*" }
+exposed = { minimap2 = "minimap2", "paftools.js" = "paftools.js", sdust = "sdust" }
+
+[envs.seqtk]
+channels = ["conda-forge", "bioconda"]
+dependencies = { seqtk = "*" }
+exposed = { seqtk = "seqtk" }
+
+[envs.rclone]
+channels = ["conda-forge", "bioconda"]
+dependencies = { rclone = "*" }
+exposed = { rclone = "rclone" }
+
+[envs.nvim]
+channels = ["conda-forge"]
+dependencies = { nvim = "*" }
+exposed = { nvim = "nvim" }
 
 [envs.python]
 channels = ["conda-forge", "bioconda"]
 dependencies = { pysam = "*", defopt = "*", python = "*", numpy = "*", pandas = "*", polars = "*", altair = "*", matplotlib = "*", seaborn = "*", numba = "*", marimo = "*", jupyterlab = "*", pyarrow = "*", snakefmt = "*", snakemake = ">=8.0", black = "*" }
 exposed = { 2to3 = "2to3", "2to3-3.12" = "2to3-3.12", idle3 = "idle3", "idle3.12" = "idle3.12", pydoc = "pydoc", pydoc3 = "pydoc3", "pydoc3.12" = "pydoc3.12", python = "python", python3 = "python3", python3-config = "python3-config", "python3.1" = "python3.1", "python3.12" = "python3.12", "python3.12-config" = "python3.12-config", f2py = "f2py", numpy-config = "numpy-config", numba = "numba", marimo = "marimo", jupyter-lab = "jupyter-lab", jupyter-labextension = "jupyter-labextension", jupyter-labhub = "jupyter-labhub", jlpm = "jlpm", snakefmt = "snakefmt", snakemake = "snakemake" }
 
+
+[envs.test]
+channels = ["conda-forge"]
+dependencies = { dust = "*" }
+exposed = { dust = "dust" }
+
+[envs.osx64]
+channels = ["conda-forge", "bioconda"]
+platform = "osx-64"
+dependencies = { rustybam = "*", bigtools = "*" }
+exposed = { rb = "rb", rustybam = "rustybam" }
+
+[envs.r]
+channels = ["conda-forge"]
+dependencies = { r = "*", r-ggplot2 = "*", r-tidyverse = "*", r-ggrepel = "*", "r-data.table" = "*", r-base = "*", r-ggpubr = "*", r-cowplot = "*", r-hexbin = "*", r-scales = "*", r-languageserver = "*", radian = "*", r-knitr = "*", r-glue = "*", r-devtools = "*" }
+exposed = { R = "R", Rscript = "Rscript", radian = "radian" }
+
 [envs.bfx]
 channels = ["conda-forge", "bioconda"]
-dependencies = { samtools = "==1.21" , bedtools = "*" , pysam = "*" , snakemake = "*" , snakefmt = "*" , ruff = "*" , ripgrep = "*", seqtk="*", minimap2="*", htslib="*", bcftools="*", hiphase = "*" }
+dependencies = { samtools = "==1.21" , bedtools = "*" , pysam = "*" , snakemake = "*" , snakefmt = "*" , ruff = "*" , ripgrep = "*" }
 exposed = { ace2sam = "ace2sam", blast2sam = "blast2sam", bowtie2sam = "bowtie2sam", export2sam = "export2sam", fasta-sanitize = "fasta-sanitize", interpolate_sam = "interpolate_sam", maq2sam-long = "maq2sam-long", maq2sam-short = "maq2sam-short", md5fa = "md5fa", md5sum-lite = "md5sum-lite", novo2sam = "novo2sam", plot-ampliconstats = "plot-ampliconstats", plot-bamstats = "plot-bamstats", psl2sam = "psl2sam", sam2vcf = "sam2vcf", samtools = "samtools", seq_cache_populate = "seq_cache_populate", soap2sam = "soap2sam", wgsim = "wgsim", wgsim_eval = "wgsim_eval", zoom2sam = "zoom2sam", annotateBed = "annotateBed", bamToBed = "bamToBed", bamToFastq = "bamToFastq", bed12ToBed6 = "bed12ToBed6", bedToBam = "bedToBam", bedToIgv = "bedToIgv", bedpeToBam = "bedpeToBam", bedtools = "bedtools", closestBed = "closestBed", clusterBed = "clusterBed", complementBed = "complementBed", coverageBed = "coverageBed", expandCols = "expandCols", fastaFromBed = "fastaFromBed", flankBed = "flankBed", genomeCoverageBed = "genomeCoverageBed", getOverlap = "getOverlap", groupBy = "groupBy", intersectBed = "intersectBed", linksBed = "linksBed", mapBed = "mapBed", maskFastaFromBed = "maskFastaFromBed", mergeBed = "mergeBed", multiBamCov = "multiBamCov", multiIntersectBed = "multiIntersectBed", nucBed = "nucBed", pairToBed = "pairToBed", pairToPair = "pairToPair", randomBed = "randomBed", shiftBed = "shiftBed", shuffleBed = "shuffleBed", slopBed = "slopBed", sortBed = "sortBed", subtractBed = "subtractBed", tagBam = "tagBam", unionBedGraphs = "unionBedGraphs", windowBed = "windowBed", windowMaker = "windowMaker" }
 
-[envs.shell]
+[envs.fibertools-rs]
+channels = ["conda-forge", "bioconda"]
+dependencies = { fibertools-rs = "*" }
+exposed = { ft = "ft" }
+
+[envs.cli]
 channels = ["conda-forge"]
 dependencies = { dust = "*", starship = "*", nvim = "*", zoxide = "*", ripgrep = "*", tidy-viewer = "*", bat = "*", hyperfine = "*", git-delta = "*", fd-find = "*", hck = "*", awscli = "*", rclone = "*", gh = "*" , eza = "*" , typst = "*" }
 exposed = { dust = "dust", starship = "starship", nvim = "nvim", zoxide = "zoxide", rg = "rg", tidy-viewer = "tidy-viewer", bat = "bat", hyperfine = "hyperfine", delta = "delta", fd = "fd", hck = "hck", aws = "aws", "aws.cmd" = "aws.cmd", aws_bash_completer = "aws_bash_completer", aws_completer = "aws_completer", aws_zsh_completer = "aws_zsh_completer", rclone = "rclone", gh = "gh", eza = "eza", typst = "typst" }
+dependencies = { helix = "*" }
+exposed = { hx = "hx" }
