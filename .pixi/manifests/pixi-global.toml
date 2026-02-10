@@ -45,15 +45,10 @@ exposed = { R = "R", Rscript = "Rscript", radian = "radian" }
 
 [envs.bfx]
 channels = ["conda-forge", "bioconda"]
-dependencies = { samtools = "==1.21" , bedtools = "*" , pysam = "*" , snakemake = "*" , snakefmt = "*" , ruff = "*" , ripgrep = "*" }
+dependencies = { samtools = "==1.23", bedtools = "*" , pysam = "*" , snakemake = "*" , snakefmt = "*" , ruff = "*" , ripgrep = "*" , htslib = "==1.23", bcftools = "==1.23" }
 exposed = { ace2sam = "ace2sam", blast2sam = "blast2sam", bowtie2sam = "bowtie2sam", export2sam = "export2sam", fasta-sanitize = "fasta-sanitize", interpolate_sam = "interpolate_sam", maq2sam-long = "maq2sam-long", maq2sam-short = "maq2sam-short", md5fa = "md5fa", md5sum-lite = "md5sum-lite", novo2sam = "novo2sam", plot-ampliconstats = "plot-ampliconstats", plot-bamstats = "plot-bamstats", psl2sam = "psl2sam", sam2vcf = "sam2vcf", samtools = "samtools", seq_cache_populate = "seq_cache_populate", soap2sam = "soap2sam", wgsim = "wgsim", wgsim_eval = "wgsim_eval", zoom2sam = "zoom2sam", annotateBed = "annotateBed", bamToBed = "bamToBed", bamToFastq = "bamToFastq", bed12ToBed6 = "bed12ToBed6", bedToBam = "bedToBam", bedToIgv = "bedToIgv", bedpeToBam = "bedpeToBam", bedtools = "bedtools", closestBed = "closestBed", clusterBed = "clusterBed", complementBed = "complementBed", coverageBed = "coverageBed", expandCols = "expandCols", fastaFromBed = "fastaFromBed", flankBed = "flankBed", genomeCoverageBed = "genomeCoverageBed", getOverlap = "getOverlap", groupBy = "groupBy", intersectBed = "intersectBed", linksBed = "linksBed", mapBed = "mapBed", maskFastaFromBed = "maskFastaFromBed", mergeBed = "mergeBed", multiBamCov = "multiBamCov", multiIntersectBed = "multiIntersectBed", nucBed = "nucBed", pairToBed = "pairToBed", pairToPair = "pairToPair", randomBed = "randomBed", shiftBed = "shiftBed", shuffleBed = "shuffleBed", slopBed = "slopBed", sortBed = "sortBed", subtractBed = "subtractBed", tagBam = "tagBam", unionBedGraphs = "unionBedGraphs", windowBed = "windowBed", windowMaker = "windowMaker" }
-
-[envs.fibertools-rs]
-channels = ["conda-forge", "bioconda"]
-dependencies = { fibertools-rs = "*" }
-exposed = { ft = "ft" }
 
 [envs.cli]
 channels = ["conda-forge"]
-dependencies = { dust = "*", starship = "*", nvim = "*", zoxide = "*", ripgrep = "*", tidy-viewer = "*", bat = "*", hyperfine = "*", git-delta = "*", fd-find = "*", hck = "*", rclone = "*", gh = "*" , eza = "*" , typst = "*" , helix = "*"}
-exposed = { dust = "dust", starship = "starship", nvim = "nvim", zoxide = "zoxide", rg = "rg", tidy-viewer = "tidy-viewer", bat = "bat", hyperfine = "hyperfine", delta = "delta", fd = "fd", hck = "hck", rclone = "rclone", gh = "gh", eza = "eza", typst = "typst", hx = "hx" }
+dependencies = { dust = "*", starship = "*", nvim = "*", zoxide = "*", ripgrep = "*", tidy-viewer = "*", bat = "*", hyperfine = "*", git-delta = "*", fd-find = "*", hck = "*", rclone = "*", gh = "*" , eza = "*" , typst = "*" , helix = "*", datamash = "*" }
+exposed = { dust = "dust", starship = "starship", nvim = "nvim", zoxide = "zoxide", rg = "rg", tidy-viewer = "tidy-viewer", bat = "bat", hyperfine = "hyperfine", delta = "delta", fd = "fd", hck = "hck", rclone = "rclone", gh = "gh", eza = "eza", typst = "typst", hx = "hx", datamash = "datamash", decorate = "decorate" }
