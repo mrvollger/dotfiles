@@ -118,7 +118,7 @@ git pull
 
 # --- Ensure target directories exist ---
 mkdir -p ~/.config/alacritty ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lvim/syntax \
-    ~/.pixi/manifests/ ~/.config/helix ~/.claude ~/bin
+    ~/.pixi/manifests/ ~/.config/helix ~/.claude ~/.config/git ~/.config/atuin ~/bin
 
 # --- Main file list ---
 for f in .Rprofile \
@@ -138,7 +138,9 @@ for f in .Rprofile \
     .config/helix/config.toml \
     .config/starship.toml \
     .claude/settings.json \
-    .claude/CLAUDE.md; do
+    .claude/CLAUDE.md \
+    .config/git/ignore \
+    .config/atuin/config.toml; do
     sync_file "$(realpath "${f}")" "${HOME}/${f}" "${f}"
 done
 
