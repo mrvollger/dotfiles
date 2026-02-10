@@ -3,7 +3,7 @@
 helper = store
 [user]
 name = Mitchell R. Vollger
-email = mvollger@gmai.com
+email = mvollger@gmail.com
 # pub id
 signingkey = $HOME/.ssh/id_rsa.pub
 [pull]

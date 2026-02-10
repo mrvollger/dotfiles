@@ -2,6 +2,7 @@
 .pixi/**
 .vscode/**
 .ruff_cache/**
+*.bak
 
 # Claude cache and runtime files
 .claude/cache/

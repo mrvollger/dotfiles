@@ -9,7 +9,6 @@
       "Bash(grep:*)"
     ]
   },
-  "model": "haiku",
   "enabledPlugins": {
     "scientific-skills@claude-scientific-skills": true,
     "rust-analyzer-lsp@claude-plugins-official": true

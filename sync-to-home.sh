@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
 # check for -d flag
 if [ "$1" == "-d" ] || [ "$1" == "-n" ]; then
@@ -7,8 +8,6 @@ if [ "$1" == "-d" ] || [ "$1" == "-n" ]; then
 else
     DRY_RUN=false
 fi
-
-set -euo pipefail
 
 git pull
 mkdir -p ~/.config/alacritty ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lvim/syntax ~/.pixi/manifests/ ~/.config/helix ~/.claude
@@ -65,7 +64,7 @@ for f in .Rprofile \
             mv "$DEST" "${DEST}.bak"
         fi
 
-        ln -fs "$@" "$SRC" "$DEST"
+        ln -fs "$SRC" "$DEST"
     fi
 done
 
@@ -105,6 +104,6 @@ for f in .config/claude-desktop/claude_desktop_config.json; do
         if [ -e "$DEST" ]; then
             mv "$DEST" "${DEST}.bak"
         fi
-        ln -fs "$@" "$SRC" "$DEST"
+        ln -fs "$SRC" "$DEST"
     fi
 done

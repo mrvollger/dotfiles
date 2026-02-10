@@ -10,5 +10,9 @@ NODE=$(ssh hyak 'squeue \
 
 echo $NODE
 
-sed -I '' -E s"/Hostname.*/Hostname $NODE/" ~/.ssh/klone-node-config
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i '' -E "s/Hostname.*/Hostname $NODE/" ~/.ssh/klone-node-config
+else
+    sed -i -E "s/Hostname.*/Hostname $NODE/" ~/.ssh/klone-node-config
+fi
 
