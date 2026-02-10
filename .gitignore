@@ -2,4 +2,35 @@
 .pixi/**
 .vscode/**
 .ruff_cache/**
+*.bak
+
+# Claude cache and runtime files
+.claude/cache/
+.claude/debug/
+.claude/downloads/
+.claude/file-history/
+.claude/history.jsonl
+.claude/ide/
+.claude/plans/
+.claude/plugins/cache/
+.claude/plugins/marketplaces/
+.claude/plugins/known_marketplaces.json
+.claude/projects/
+.claude/session-env/
+.claude/shell-snapshots/
+.claude/skills/
+.claude/stats-cache.json
+.claude/statsig/
+.claude/telemetry/
+.claude/todos/
+
+# Claude desktop Electron cache
+.config/claude-desktop/Cache/
+.config/claude-desktop/GPUCache/
+.config/claude-desktop/Code\ Cache/
+.config/claude-desktop/Cookies*
+.config/claude-desktop/IndexedDB/
+.config/claude-desktop/Local\ Storage/
+.config/claude-desktop/Preferences
+.config/claude-desktop/*.bak*
 

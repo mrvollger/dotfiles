@@ -1,3 +1,4 @@
+# NOTE: theme requires: git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 import:
   #- ~/.config/alacritty/themes/themes/tomorrow_night_bright.yaml
  - ~/.config/alacritty/themes/themes/blood_moon.yaml
