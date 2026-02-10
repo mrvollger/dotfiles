@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "basic-memory": {
+      "command": "/Users/mrvollger/.local/bin/uvx",
+      "args": [
+        "basic-memory",
+        "mcp"
+      ]
+    }
+  },
+  "preferences": {
+    "quickEntryDictationShortcut": "capslock",
+    "localAgentModeTrustedFolders": [
+      "/Users/mrvollger/repos/hifiasm-smk"
+    ],
+    "sidebarMode": "chat",
+    "coworkScheduledTasksEnabled": false
+  }
+}

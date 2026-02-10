@@ -11,7 +11,7 @@ fi
 set -euo pipefail
 
 git pull
-mkdir -p ~/.config/alacritty ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lvim/syntax ~/.pixi/manifests/ ~/.config/helix
+mkdir -p ~/.config/alacritty ~/.config/lvim ~/.config/lvim/ftdetect ~/.config/lvim/syntax ~/.pixi/manifests/ ~/.config/helix ~/.claude
 mkdir -p ~/bin
 
 # printf "if [ -f ~/.bash_aliases ]; then\n\t. ~/.bash_aliases\nfi\n" >> ~/.bashrc
@@ -32,7 +32,9 @@ for f in .Rprofile \
     .config/lvim/ftdetect/snakemake.vim \
     .config/lvim/syntax/snakemake.vim \
     .config/helix/config.toml \
-    .config/starship.toml; do
+    .config/starship.toml \
+    .claude/settings.json \
+    .claude/CLAUDE.md; do
     SRC=$(realpath ${f})
     DEST="${HOME}/${f}"
 
@@ -63,6 +65,46 @@ for f in .Rprofile \
             mv "$DEST" "${DEST}.bak"
         fi
 
+        ln -fs "$@" "$SRC" "$DEST"
+    fi
+done
+
+# Handle Claude desktop config (OS-specific paths)
+for f in .config/claude-desktop/claude_desktop_config.json; do
+    SRC=$(realpath ${f})
+
+    # Detect OS and set appropriate destination
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        DEST="${HOME}/Library/Application Support/claude/$(basename ${f})"
+    else
+        # Linux and other Unix-like systems use XDG config
+        DEST="${HOME}/.config/claude/$(basename ${f})"
+    fi
+
+    if [ "$(realpath "$SRC" 2>/dev/null)" == "$(realpath "$DEST" 2>/dev/null)" ]; then
+        echo -e "\033[1;32m $f is already synced in the home directory \033[0m"
+        continue
+    elif [ -e "$DEST" ]; then
+        echo
+        echo -e "\033[1;31m $f is already in the home directory, existing file will be backed up \033[0m"
+    else
+        echo
+        echo "$f" is not in the home directory
+    fi
+
+    if [ "$DRY_RUN" = true ]; then
+        echo "DRY RUN: ln -fs $SRC $DEST"
+        if [ -e "$DEST" ]; then
+            echo "DRY RUN: mv $DEST ${DEST}.bak"
+            echo "test diff with:\ndiff ${DEST} $SRC"
+        fi
+        echo
+    else
+        # Ensure parent directory exists
+        mkdir -p "$(dirname "$DEST")"
+        if [ -e "$DEST" ]; then
+            mv "$DEST" "${DEST}.bak"
+        fi
         ln -fs "$@" "$SRC" "$DEST"
     fi
 done

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "WebFetch",
+      "Bash(rg:*)",
+      "Bash(grep:*)"
+    ]
+  },
+  "model": "haiku",
+  "enabledPlugins": {
+    "scientific-skills@claude-scientific-skills": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754070505711
+  },
+  "customInstructions": [
+    "When starting a new session or a new project check for the file .claude/context.md to see if there is general context that we have written for you",
+    "When I ask you to save context be defualt suggest saving it in .claude/context.md",
+    "When decompressing gzipped files on this Mac system, always use 'gunzip -c' instead of 'zcat' because zcat behaves differently on macOS.",
+    "Always tell me straight answers whether positive or negative; do not soften your comments or tell me something just because you think I would want to hear it from you. Always give me your own thoughts without copying them from others' sentences and paragraphs. give me real citations, urls and source identifications. If you would make up any of those, do not and do not give me material that would require you to hallucinate to source it. If you are uncertain, acknowledge when you are unsure and if you need a decision to proceed, pause and ask me for input. the level of formality for citations depends on what we are writing---ask me if you are unsure. when experts disagree, explain the issues and ask me what I think. again, how much to explain reasoning depends on what we are writing. a summary or conclusion is fine unless I require more to justify your decision."
+  ],
+  "allowedTools": [
+    "Task",
+    "Glob",
+    "Grep",
+    "LS",
+    "Read",
+    "WebFetch",
+    "WebSearch"
+  ]
+}
