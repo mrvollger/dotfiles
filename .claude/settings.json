@@ -35,5 +35,6 @@
     "WebFetch",
     "WebSearch"
   ],
-  "model": "claude-opus-4-6[1m]"
+  "model": "claude-opus-4-6[1m]",
+  "effortLevel": "high"
 }
