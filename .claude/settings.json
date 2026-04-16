@@ -30,5 +30,6 @@
     "Read",
     "WebFetch",
     "WebSearch"
-  ]
+  ],
+  "effortLevel": "high"
 }
