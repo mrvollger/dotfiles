@@ -9,11 +9,13 @@
     }
   },
   "preferences": {
-    "quickEntryDictationShortcut": "capslock",
+    "quickEntryDictationShortcut": "off",
     "localAgentModeTrustedFolders": [
       "/Users/mrvollger/repos/hifiasm-smk"
     ],
+    "coworkScheduledTasksEnabled": true,
+    "ccdScheduledTasksEnabled": true,
     "sidebarMode": "chat",
-    "coworkScheduledTasksEnabled": false
+    "coworkWebSearchEnabled": true
   }
 }

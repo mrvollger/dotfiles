@@ -31,7 +31,7 @@ Focus: long-read sequencing, segmental duplications, genome assembly, epigenomic
 ## Coding Conventions
 
 - **Python**: type hints, f-strings, `pathlib` over `os.path`. Prefer polars over pandas. Use context managers for file I/O.
-- **Rust**: use `Result<T, E>` for fallible operations. Prefer streaming/iterative processing over loading entire files into memory. Document unsafe blocks.
+- **Rust**: use `Result<T, E>` for fallible operations. Prefer streaming/iterative processing over loading entire files into memory. Document unsafe blocks. Always run cargo fmt, clippy, and tests before committing.
 - **Bash**: start every script with `#!/usr/bin/env bash` and `set -euo pipefail`.
 - **Snakemake**: use `rule all` with explicit expected outputs. Define conda envs per rule when possible. Use `temp()` for intermediate files. Parameterize threads and memory via `resources:`.
 - **Docstrings**: write docstrings for public functions. NumPy-style for Python, rustdoc for Rust.
@@ -72,3 +72,6 @@ bcftools stats input.vcf.gz
 
 - Write concise commit messages that explain *why*, not just *what*.
 - Use feature branches for non-trivial changes.
+
+## Writing notes
+- Avoid the use of — em dashes — in favor of commas or parentheses for clarity. Just limit their use to avoid looking like AI.
