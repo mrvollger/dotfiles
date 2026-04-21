@@ -9,14 +9,16 @@
       "Bash(grep:*)"
     ]
   },
+  "model": "opus",
   "enabledPlugins": {
     "scientific-skills@claude-scientific-skills": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "voiceEnabled": true,
   "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754070505711
   },
@@ -34,7 +36,5 @@
     "Read",
     "WebFetch",
     "WebSearch"
-  ],
-  "model": "claude-opus-4-6[1m]",
-  "effortLevel": "high"
+  ]
 }

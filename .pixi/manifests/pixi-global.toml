@@ -1,36 +1,14 @@
 version = 1
 
-
 [envs.awscli]
 channels = ["conda-forge"]
 dependencies = { awscli = "*" }
 exposed = { aws = "aws", aws_completer = "aws_completer" }
 
-[envs.htslib]
-channels = ["conda-forge", "bioconda"]
-dependencies = { htslib = "*" }
-exposed = { annot-tsv = "annot-tsv", bgzip = "bgzip", htsfile = "htsfile", tabix = "tabix" }
-
-[envs.bcftools]
-channels = ["conda-forge", "bioconda"]
-dependencies = { bcftools = "*" }
-exposed = { bcftools = "bcftools", color-chrs = "color-chrs", gff2gff = "gff2gff", guess-ploidy = "guess-ploidy", plot-roh = "plot-roh", plot-vcfstats = "plot-vcfstats", run-roh = "run-roh", vcfutils = "vcfutils" }
-
-[envs.minimap2]
-channels = ["conda-forge", "bioconda"]
-dependencies = { minimap2 = "*" }
-exposed = { minimap2 = "minimap2", "paftools.js" = "paftools.js", sdust = "sdust" }
-
-[envs.seqtk]
-channels = ["conda-forge", "bioconda"]
-dependencies = { seqtk = "*" }
-exposed = { seqtk = "seqtk" }
-
 [envs.python]
 channels = ["conda-forge", "bioconda"]
 dependencies = { pysam = "*", defopt = "*", python = "*", numpy = "*", pandas = "*", polars = "*", altair = "*", matplotlib = "*", seaborn = "*", numba = "*", marimo = "*", jupyterlab = "*", pyarrow = "*", snakefmt = "*", snakemake = ">=8.0", black = "*" , tqdm = "*" }
 exposed = { idle3 = "idle3", pydoc = "pydoc", pydoc3 = "pydoc3", python = "python", python3 = "python3", python3-config = "python3-config", "python3.1" = "python3.1", f2py = "f2py", numpy-config = "numpy-config", numba = "numba", marimo = "marimo", jupyter-lab = "jupyter-lab", jupyter-labextension = "jupyter-labextension", jupyter-labhub = "jupyter-labhub", jlpm = "jlpm", snakefmt = "snakefmt", snakemake = "snakemake" }
-
 
 [envs.osx64]
 channels = ["conda-forge", "bioconda"]
@@ -45,8 +23,8 @@ exposed = { R = "R", Rscript = "Rscript", radian = "radian" }
 
 [envs.bfx]
 channels = ["conda-forge", "bioconda"]
-dependencies = { samtools = "==1.23", bedtools = "*" , pysam = "*", ruff = "*", htslib = "==1.23", bcftools = "==1.23", hifiasm = "*" }
-exposed = { ace2sam = "ace2sam", blast2sam = "blast2sam", bowtie2sam = "bowtie2sam", export2sam = "export2sam", fasta-sanitize = "fasta-sanitize", interpolate_sam = "interpolate_sam", maq2sam-long = "maq2sam-long", maq2sam-short = "maq2sam-short", md5fa = "md5fa", md5sum-lite = "md5sum-lite", novo2sam = "novo2sam", plot-ampliconstats = "plot-ampliconstats", plot-bamstats = "plot-bamstats", psl2sam = "psl2sam", sam2vcf = "sam2vcf", samtools = "samtools", seq_cache_populate = "seq_cache_populate", soap2sam = "soap2sam", wgsim = "wgsim", wgsim_eval = "wgsim_eval", zoom2sam = "zoom2sam", annotateBed = "annotateBed", bamToBed = "bamToBed", bamToFastq = "bamToFastq", bed12ToBed6 = "bed12ToBed6", bedToBam = "bedToBam", bedToIgv = "bedToIgv", bedpeToBam = "bedpeToBam", bedtools = "bedtools", closestBed = "closestBed", clusterBed = "clusterBed", complementBed = "complementBed", coverageBed = "coverageBed", expandCols = "expandCols", fastaFromBed = "fastaFromBed", flankBed = "flankBed", genomeCoverageBed = "genomeCoverageBed", getOverlap = "getOverlap", groupBy = "groupBy", intersectBed = "intersectBed", linksBed = "linksBed", mapBed = "mapBed", maskFastaFromBed = "maskFastaFromBed", mergeBed = "mergeBed", multiBamCov = "multiBamCov", multiIntersectBed = "multiIntersectBed", nucBed = "nucBed", pairToBed = "pairToBed", pairToPair = "pairToPair", randomBed = "randomBed", shiftBed = "shiftBed", shuffleBed = "shuffleBed", slopBed = "slopBed", sortBed = "sortBed", subtractBed = "subtractBed", tagBam = "tagBam", unionBedGraphs = "unionBedGraphs", windowBed = "windowBed", windowMaker = "windowMaker" }
+dependencies = { samtools = "==1.23", bedtools = "*" , pysam = "*", ruff = "*", htslib = "==1.23", bcftools = "==1.23", hifiasm = "*" , bioawk = "*" }
+exposed = { ace2sam = "ace2sam", blast2sam = "blast2sam", bowtie2sam = "bowtie2sam", export2sam = "export2sam", fasta-sanitize = "fasta-sanitize", interpolate_sam = "interpolate_sam", maq2sam-long = "maq2sam-long", maq2sam-short = "maq2sam-short", md5fa = "md5fa", md5sum-lite = "md5sum-lite", novo2sam = "novo2sam", plot-ampliconstats = "plot-ampliconstats", plot-bamstats = "plot-bamstats", psl2sam = "psl2sam", sam2vcf = "sam2vcf", samtools = "samtools", seq_cache_populate = "seq_cache_populate", soap2sam = "soap2sam", wgsim = "wgsim", wgsim_eval = "wgsim_eval", zoom2sam = "zoom2sam", annotateBed = "annotateBed", bamToBed = "bamToBed", bamToFastq = "bamToFastq", bed12ToBed6 = "bed12ToBed6", bedToBam = "bedToBam", bedToIgv = "bedToIgv", bedpeToBam = "bedpeToBam", bedtools = "bedtools", closestBed = "closestBed", clusterBed = "clusterBed", complementBed = "complementBed", coverageBed = "coverageBed", expandCols = "expandCols", fastaFromBed = "fastaFromBed", flankBed = "flankBed", genomeCoverageBed = "genomeCoverageBed", getOverlap = "getOverlap", groupBy = "groupBy", intersectBed = "intersectBed", linksBed = "linksBed", mapBed = "mapBed", maskFastaFromBed = "maskFastaFromBed", mergeBed = "mergeBed", multiBamCov = "multiBamCov", multiIntersectBed = "multiIntersectBed", nucBed = "nucBed", pairToBed = "pairToBed", pairToPair = "pairToPair", randomBed = "randomBed", shiftBed = "shiftBed", shuffleBed = "shuffleBed", slopBed = "slopBed", sortBed = "sortBed", subtractBed = "subtractBed", tagBam = "tagBam", unionBedGraphs = "unionBedGraphs", windowBed = "windowBed", windowMaker = "windowMaker", ruff = "ruff", annot-tsv = "annot-tsv", bgzip = "bgzip", htsfile = "htsfile", ref-cache = "ref-cache", tabix = "tabix", bcftools = "bcftools", color-chrs = "color-chrs", gff2gff = "gff2gff", guess-ploidy = "guess-ploidy", plot-roh = "plot-roh", plot-vcfstats = "plot-vcfstats", roh-viz = "roh-viz", run-roh = "run-roh", vcfutils = "vcfutils", vrfs-variances = "vrfs-variances", hifiasm = "hifiasm", bioawk = "bioawk" }
 
 [envs.cli]
 channels = ["conda-forge"]
