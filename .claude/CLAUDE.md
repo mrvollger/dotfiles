@@ -67,6 +67,7 @@ bcftools stats input.vcf.gz
 - Don't `pip install` into python envs managed by other tools, pixi, uv, ect.
 - Don't commit large output or data files — use `.gitignore`.
 - Don't forget index files when moving/symlinking BAM/CRAM/VCF files.
+- Don't `rm -rf` snakemake output dirs to force re-runs. Use `--forcerun <rule>`, `-R <rule>`, `--forceall`, or `--rerun-incomplete` and let snakemake manage its own state.
 
 ## Git Conventions
 
