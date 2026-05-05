@@ -50,6 +50,13 @@ snakemake -n  # dry run first
 # Data validation
 samtools quickcheck *.bam
 bcftools stats input.vcf.gz
+
+# Kill a running snakemake (signal the process group, not the pid)
+kill -INT -- -$(ps -o pgid= -p $(pgrep -f 'bin/snakemake .*-s' | head -1) | tr -d ' ')
+# `kill -INT $pid` alone hangs -- snakemake's pool.shutdown() waits for
+# subprocesses (minimap2, etc.) to finish naturally; they never get the
+# signal. Ctrl+C in a terminal works because the kernel broadcasts to the
+# whole foreground group; this command does the same explicitly.
 ```
 
 ## Important Patterns
