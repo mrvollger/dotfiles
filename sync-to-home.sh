@@ -139,6 +139,7 @@ for f in .Rprofile \
     .config/starship.toml \
     .claude/settings.json \
     .claude/CLAUDE.md \
+    .claude/skills/avoid-ai-writing \
     .config/git/ignore \
     .config/atuin/config.toml; do
     sync_file "$(realpath "${f}")" "${HOME}/${f}" "${f}"
