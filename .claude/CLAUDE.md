@@ -5,6 +5,14 @@
 Computational genomics lab (Vollger Lab, University of Utah, Dept. of Human Genetics).
 Focus: long-read sequencing, segmental duplications, genome assembly, epigenomics (fiberseq/m6A), and variant effect prediction in complex genomic regions.
 
+## Writing Conventions
+
+Applies to chat responses and anything you produce: documents, comments, commit messages, docs.
+
+Be concise. Lead with the answer, cut preamble and filler, and say it once. Skip flattery and hedging ("great question", "I think", "it seems"); state things directly. Match length to the task, so a one-line question gets a one-line answer and bullet lists appear only when content is genuinely list-shaped. Prefer plain words over jargon ("use" not "utilize"), give specific numbers and commands over generalities, and write in active voice with short sentences. Avoid em dashes; use commas, parentheses, or separate sentences instead.
+
+When producing or substantially editing prose, apply the `avoid-ai-writing` skill (`~/.claude/skills/avoid-ai-writing`) to catch AI tells. It also ships a deterministic Node detector under `detector/` for a non-LLM check.
+
 ## Environment
 
 - **Cluster**: CHPC Redwood (`redwood15.chpc.utah.edu`)
@@ -13,7 +21,7 @@ Focus: long-read sequencing, segmental duplications, genome assembly, epigenomic
 - **Projects dir**: `/scratch/ucgd/lustre-labs/vollger/projects`
 - **Conda**: prefer `mamba` for environment management
 - **Containers**: Apptainer/Singularity preferred for reproducibility on HPC
-- **Compression**: prefer `bgzip` over `gzip`/`gunzip` — it supports multithreading (`-@ threads`) and indexing with `tabix`. On macOS, `zcat` is broken — use `bgzip -dc` or `gunzip -c` instead.
+- **Compression**: prefer `bgzip` over `gzip`/`gunzip`; it supports multithreading (`-@ threads`) and indexing with `tabix`. On macOS, `zcat` is broken, so use `bgzip -dc` or `gunzip -c` instead.
   - Compress: `bgzip -@ 4 file.vcf` (produces `file.vcf.gz`)
   - Decompress: `bgzip -d file.vcf.gz` (or `bgzip -dc` to write to stdout)
   - Keep original: `bgzip -dk file.vcf.gz`
@@ -65,21 +73,18 @@ kill -INT -- -$(ps -o pgid= -p $(pgrep -f 'bin/snakemake .*-s' | head -1) | tr -
 - For large file I/O, use `/scratch` not `/home`.
 - Reference genome paths should be parameterized, not hardcoded.
 - Always move index files alongside their BAM/CRAM/VCF files.
-- Use streaming pipelines for large BAM processing — don't load entire files into memory.
+- Use streaming pipelines for large BAM processing; don't load entire files into memory.
 - Validate downloaded reference files with checksums.
 
 ## Don't
 
-- Don't hardcode absolute paths to data files — use config files or Snakemake wildcards.
-- Don't `pip install` into python envs managed by other tools, pixi, uv, ect.
-- Don't commit large output or data files — use `.gitignore`.
+- Don't hardcode absolute paths to data files; use config files or Snakemake wildcards.
+- Don't `pip install` into python envs managed by other tools, pixi, uv, etc.
+- Don't commit large output or data files; use `.gitignore`.
 - Don't forget index files when moving/symlinking BAM/CRAM/VCF files.
 - Don't `rm -rf` snakemake output dirs to force re-runs. Use `--forcerun <rule>`, `-R <rule>`, `--forceall`, or `--rerun-incomplete` and let snakemake manage its own state.
 
 ## Git Conventions
 
-- Write concise commit messages that explain *why*, not just *what*.
+- Write concise commit messages that explain why a change was made.
 - Use feature branches for non-trivial changes.
-
-## Writing notes
-- Avoid the use of — em dashes — in favor of commas or parentheses for clarity. Just limit their use to avoid looking like AI.

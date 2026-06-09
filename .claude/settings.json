@@ -10,14 +10,13 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus",
   "enabledPlugins": {
     "scientific-skills@claude-scientific-skills": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true
   },
-  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
   "feedbackSurveyState": {
@@ -38,5 +37,5 @@
     "WebFetch",
     "WebSearch"
   ],
-  "agentPushNotifEnabled": true
+  "model": "opus"
 }
