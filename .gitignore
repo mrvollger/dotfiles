@@ -36,3 +36,5 @@
 .config/claude-desktop/*.bak*
 
 !.claude/skills/referee-report/
+!.claude/skills/snakemake-workflow/
+!.claude/skills/r-plotting/

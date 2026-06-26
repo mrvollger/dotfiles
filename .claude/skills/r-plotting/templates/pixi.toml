@@ -1,0 +1,36 @@
+# Focused R plotting environment. For the lab's fuller analysis env (karyoploteR,
+# valr, circlize, reticulate, bcftools/samtools, etc.) see
+# https://github.com/vollgerlab/R-template.
+[workspace]
+authors = ["Mitchell R. Vollger <mrvollger@gmail.com>"]
+channels = ["conda-forge", "bioconda"]
+description = "Add a short description here"
+name = "figures"
+platforms = ["osx-64", "osx-arm64", "linux-64"]
+version = "0.1.0"
+
+[tasks]
+format = "R -e 'styler::style_dir(\".\", exclude_dirs = c(\".pixi\", \"Figures\"))'"
+render = { cmd = "R -e 'rmarkdown::render(\"plot.Rmd\")'", depends-on = ["format"] }
+
+[dependencies]
+r-base = ">=4.1"
+r-tidyverse = ">=2.0"
+"r-data.table" = "*"
+r-cowplot = "*"
+r-ggpubr = "*"
+r-scales = "*"
+r-glue = "*"
+r-stringr = "*"
+r-ggforce = "*"
+r-patchwork = "*"
+r-ggridges = "*"
+r-ggrepel = "*"
+r-pals = "*"
+r-hexbin = "*"
+r-splitstackshape = "*"
+r-knitr = "*"
+r-rmarkdown = "*"
+r-styler = "*"
+radian = "*"
+r-languageserver = "*"

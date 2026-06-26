@@ -1,0 +1,56 @@
+---
+title: "Figure report"
+output: rmarkdown::html_vignette
+---
+
+```{r setup-knitr, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 3,
+  fig.height = 3,
+  dpi = 200,
+  dev = "png"
+)
+```
+
+```{r setup}
+# library(mrvplot)            # packaged helpers, or:
+source("utils.R")             # standalone mrv_* helpers + lab palette
+library(tidyverse)
+library(ggpubr)
+```
+
+## Data
+
+```{r data}
+df <- mrv_read_bed("input.bed") # or fread(...) / your own loader
+head(df)
+```
+
+## Figure
+
+Large-data scatter: hexbin so density and hidden clusters show, log color scale,
+fixed aspect, correlation, clean grid theme.
+
+```{r figure}
+p <- ggplot(df, aes(x, y)) +
+  geom_hex(bins = 50) +
+  scale_fill_distiller("", palette = "Spectral", trans = "log10") +
+  geom_abline(slope = 1, intercept = 0, color = "darkred", linetype = "dashed") +
+  coord_fixed() +
+  stat_cor(size = 2) +
+  scale_x_continuous("x label", labels = scales::percent) +
+  scale_y_continuous("y label", labels = scales::percent) +
+  mrv_grid() +
+  theme(legend.position = "right")
+
+print(p)
+```
+
+## Save (figure + its data)
+
+```{r save, eval = FALSE}
+# writes Figures/plot.pdf, Figures/Tables/plot.tbl.gz, and tmp.pdf
+mrv_ggsave("Figures/plot.pdf", width = 3, height = 3)
+```
