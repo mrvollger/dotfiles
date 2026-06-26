@@ -139,11 +139,28 @@ for f in .Rprofile \
     .config/starship.toml \
     .claude/settings.json \
     .claude/CLAUDE.md \
-    .claude/skills/avoid-ai-writing \
+    bin/claude-adopt-skill.sh \
     .config/git/ignore \
     .config/atuin/config.toml; do
     sync_file "$(realpath "${f}")" "${HOME}/${f}" "${f}"
 done
+
+# --- Claude skills: symlink every skill that lives in this repo ---
+# Auto-discovered, so adding a new skill never means editing this script.
+for skill in .claude/skills/*/; do
+    [ -d "$skill" ] || continue
+    sync_file "$(realpath "$skill")" "${HOME}/${skill%/}" "${skill%/}"
+done
+
+# --- Suggest adopting small skills that live only in ~/.claude/skills ---
+if [ -x bin/claude-adopt-skill.sh ]; then
+    suggestions="$(bin/claude-adopt-skill.sh || true)"
+    if [ -n "$suggestions" ]; then
+        echo
+        echo "Un-adopted skills you could pull into this repo:"
+        echo "$suggestions"
+    fi
+fi
 
 # --- Claude desktop config (OS-specific destination) ---
 for f in .config/claude-desktop/claude_desktop_config.json; do

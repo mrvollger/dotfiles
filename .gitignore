@@ -18,7 +18,8 @@
 .claude/projects/
 .claude/session-env/
 .claude/shell-snapshots/
-.claude/skills/
+.claude/skills/*
+!.claude/skills/avoid-ai-writing/
 .claude/stats-cache.json
 .claude/statsig/
 .claude/telemetry/
@@ -34,3 +35,4 @@
 .config/claude-desktop/Preferences
 .config/claude-desktop/*.bak*
 
+!.claude/skills/referee-report/
